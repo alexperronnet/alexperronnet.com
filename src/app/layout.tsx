@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   },
 }
 
-type LayoutProps = {
+type RootLayoutProps = {
   children: React.ReactNode
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en' suppressHydrationWarning>
       <head />

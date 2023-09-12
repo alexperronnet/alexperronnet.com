@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 
 import { SiteFooter } from '@/components/site-footer'
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
           <Toaster />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )

@@ -26,7 +26,7 @@ export function ThemeSelect() {
       </SelectTrigger>
       <SelectContent position='popper' side='top'>
         <SelectItem value='system'>System</SelectItem>
-        <SelectItem value='ligh'>Light</SelectItem>
+        <SelectItem value='light'>Light</SelectItem>
         <SelectItem value='dark'>Dark</SelectItem>
       </SelectContent>
     </Select>

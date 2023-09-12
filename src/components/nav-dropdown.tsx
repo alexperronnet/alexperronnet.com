@@ -28,11 +28,11 @@ export function NavDropdown() {
       <DropdownMenuContent className='w-48' align='end'>
         <DropdownMenuLabel>Where we droppin’?</DropdownMenuLabel>
         <DropdownMenuGroup>
-          {NAV_CONFIG.map((navItem) => (
-            <DropdownMenuItem key={navItem.label} asChild disabled={navItem.href === pathname}>
+          {NAV_CONFIG.map((navItem, index) => (
+            <DropdownMenuItem key={index} asChild disabled={navItem.href === pathname}>
               <Link href={navItem.href} className='cursor-pointer'>
                 <span>{navItem.label}</span>
-                <DropdownMenuShortcut>{navItem.shortcut}</DropdownMenuShortcut>
+                <DropdownMenuShortcut>{navItem.shortcut.join('+')}</DropdownMenuShortcut>
               </Link>
             </DropdownMenuItem>
           ))}

@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/toaster'
 import { SITE_CONFIG } from '@/configs/site'
 import { fontSans } from '@/libs/fonts'
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             {children}
             <SiteFooter />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

@@ -18,8 +18,8 @@ export default function Home() {
       />
       <Separator className='w-48' />
       <div className='flex gap-6'>
-        {SOCIALS.map((social) => (
-          <OutboundLink key={social.name} href={social.url} className='text-sm'>
+        {SOCIALS.map((social, index) => (
+          <OutboundLink key={index} href={social.url} className='text-sm'>
             {social.name}
           </OutboundLink>
         ))}

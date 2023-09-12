@@ -65,7 +65,7 @@ export default function Projects() {
                 <div className='text-xs text-muted-foreground'>{project.tags.join(', ')}</div>
               </TableCell>
               <TableCell className='whitespace-nowrap'>
-                {Object.entries(project.links).map(([key, value]) => {
+                {Object.entries(project.links).map(([key, value], index) => {
                   const iconKey = key as keyof typeof LINK_ICONS
                   const Icon = LINK_ICONS[iconKey].icon
 

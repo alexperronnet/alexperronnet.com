@@ -2,21 +2,21 @@ export const NAV_CONFIG = [
   {
     label: 'Home',
     href: '/',
-    shortcut: 'GH',
+    shortcut: ['G', 'H'],
   },
   {
     label: 'About',
     href: '/about',
-    shortcut: 'GA',
+    shortcut: ['G', 'A'],
   },
   {
     label: 'Projects',
     href: '/projects',
-    shortcut: 'GP',
+    shortcut: ['G', 'P'],
   },
   {
     label: 'Uses',
     href: '/uses',
-    shortcut: 'GU',
+    shortcut: ['G', 'U'],
   },
 ]

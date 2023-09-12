@@ -45,8 +45,15 @@ export function CommandMenu() {
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+
+      if (open) return
+      if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return
+
       const actionMap: { [key: string]: (() => void) | undefined } = {
-        k: () => (e.metaKey || e.ctrlKey) && setOpen(!open),
         l: commands.copyLink,
         s: commands.redirectToSource,
         t: commands.toggleTheme,
@@ -71,6 +78,11 @@ export function CommandMenu() {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [commands, open])
 
+  const runCommand = React.useCallback((command: () => unknown) => {
+    setOpen(false)
+    command()
+  }, [])
+
   return (
     <>
       <Tooltip delayDuration={0}>
@@ -87,18 +99,21 @@ export function CommandMenu() {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading='General'>
-            <CommandItem onSelect={commands.copyLink}>
+            <CommandItem onSelect={() => runCommand(commands.copyLink)}>
               Copy Link
               <CommandShortcut>L</CommandShortcut>
             </CommandItem>
-            <CommandItem onSelect={commands.redirectToSource}>
+            <CommandItem onSelect={() => runCommand(commands.redirectToSource)}>
               View Source
               <CommandShortcut>S</CommandShortcut>
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading='Where we droppin’?'>
             {NAV_CONFIG.map((nav, index) => (
-              <CommandItem key={index} onSelect={() => commands.navigate(nav.href)}>
+              <CommandItem
+                key={index}
+                onSelect={() => runCommand(() => commands.navigate(nav.href))}
+              >
                 {nav.label}
                 <CommandShortcut>{nav.shortcut.join('+')}</CommandShortcut>
               </CommandItem>
@@ -106,13 +121,13 @@ export function CommandMenu() {
           </CommandGroup>
           <CommandGroup heading='Socials'>
             {SOCIALS.map((social, index) => (
-              <CommandItem key={index} onSelect={() => window.open(social.url, '_blank')}>
+              <CommandItem key={index} onSelect={() => runCommand(() => window.open(social.url))}>
                 {social.name}
               </CommandItem>
             ))}
           </CommandGroup>
           <CommandGroup heading='Preferences'>
-            <CommandItem onSelect={commands.toggleTheme}>
+            <CommandItem onSelect={() => runCommand(commands.toggleTheme)}>
               Change Theme
               <CommandShortcut>T</CommandShortcut>
             </CommandItem>

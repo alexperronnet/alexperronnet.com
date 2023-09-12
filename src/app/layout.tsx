@@ -14,6 +14,40 @@ export const metadata: Metadata = {
     default: SITE_CONFIG.title,
     template: `%s // ${SITE_CONFIG.title}`,
   },
+  description: SITE_CONFIG.description,
+  authors: [
+    {
+      name: 'alexperronnet',
+      url: SITE_CONFIG.url,
+    },
+  ],
+  creator: 'alexperronnet',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: SITE_CONFIG.url,
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    siteName: SITE_CONFIG.title,
+    images: SITE_CONFIG.image,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    images: SITE_CONFIG.image,
+    creator: '@alexperronnet',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: `${SITE_CONFIG.url}/site.webmanifest`,
 }
 
 type RootLayoutProps = {

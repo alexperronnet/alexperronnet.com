@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# lxprnt.me
 
-## Getting Started
+![preview](.github/assets/preview.png)
 
-First, run the development server:
+Dive into the depths of my digital workshop! A curious blend of humor, professionalism, and that undeniable tech geek essence, this space encapsulates my footprints in the coding sand. Enjoy the tour, and maybe pick up a line or two of code while you're at it!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## 🛠 Toolbox
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Gadget          | Why I Use It                                                           |
+| --------------- | ---------------------------------------------------------------------- |
+| **Typescript**  | Keeping my code in check. After all, better safe than sorry!           |
+| **Next.js**     | If JAMstack were a music genre, I'd have all its albums.               |
+| **TailwindCSS** | Making things look sleek without breaking a sweat.                     |
+| **Radix UI**    | My foundation. Everything starts from a good base, right?              |
+| **CmdK**        | Efficiency in a press of keys. It's the future, today!                 |
+| **Vercel**      | Where all my projects catch some Zs (and by Zs, I mean zero downtime). |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Get Up & Running
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone**: Get your hands on my digital blueprint:
 
-## Learn More
+   ```bash
+   git clone https://github.com/alexperronnet/lxprnt.me.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Navigate**: Let's step inside, shall we?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   cd lxprnt.me
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Setup**: Equip yourself with the necessary tools:
 
-## Deploy on Vercel
+   ```bash
+    pnpm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Ignite**: Light it up and see the magic:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+    pnpm dev
+   ```
+
+🖥️ Now, pop over to [localhost:3000](http://localhost:3000/). Enjoy the show!
+
+## 📃 License
+
+Yep, it's under the MIT License.
+
+## 💡 Just a Thought
+
+If this portfolio tickles your tech fancy and you're thinking of spinning something similar – go for it! All I ask is a little nod in my direction. Think of it as clapping for a DJ after a killer set. Cheers!

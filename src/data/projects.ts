@@ -24,7 +24,7 @@ export const PROJECTS = [
     title: 'React Dialog',
     links: {
       source: 'https://github.com/alexperronnet/oc-14-react-dialog',
-      npm: 'npmjs.com/package/@oc-wh/react-dialog',
+      npm: 'https://www.npmjs.com/package/@oc-wh/react-dialog',
     },
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Radix UI'],
   },
@@ -112,7 +112,7 @@ export const PROJECTS = [
     title: 'Oh My Food',
     links: {
       source: 'https://github.com/alexperronnet/oc-03-ohmyfood',
-      preview: 'https://https://oc-03-ohmyfood.netlify.app',
+      preview: 'https://oc-03-ohmyfood.netlify.app/',
     },
     tags: ['HTML', '(S)CSS'],
   },

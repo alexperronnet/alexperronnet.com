@@ -29,6 +29,9 @@ const AVATAR_TOOLTIP_PAIRS = [
 
 export function AvatarTooltip() {
   const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [imagesLoadedCount, setImagesLoadedCount] = React.useState(0)
+  const allImagesLoaded = imagesLoadedCount === AVATAR_TOOLTIP_PAIRS.length
+
   const triggerRef = React.useRef<HTMLButtonElement>(null)
 
   const handleOnClick = React.useCallback(
@@ -45,8 +48,20 @@ export function AvatarTooltip() {
     <Tooltip delayDuration={0}>
       <TooltipTrigger ref={triggerRef} onClick={handleOnClick} className='w-fit'>
         <Avatar className='h-12 w-12'>
-          <AvatarImage src={AVATAR_TOOLTIP_PAIRS[currentIndex].src} alt='@alexperronnet' />
-          <AvatarFallback>AP</AvatarFallback>
+          {AVATAR_TOOLTIP_PAIRS.map((pair, index) => (
+            <AvatarImage
+              key={pair.src}
+              src={pair.src}
+              alt='@alexperronnet'
+              style={{ display: currentIndex === index && allImagesLoaded ? 'block' : 'none' }}
+              onLoadingStatusChange={(status) => {
+                if (status === 'loaded') {
+                  setImagesLoadedCount((prevCount) => prevCount + 1)
+                }
+              }}
+            />
+          ))}
+          {!allImagesLoaded && <AvatarFallback delayMs={1000}>AP</AvatarFallback>}
         </Avatar>
       </TooltipTrigger>
       <TooltipContent

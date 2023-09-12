@@ -4,35 +4,32 @@ export const USES = [
     items: [
       {
         title: 'MacBook Pro (14", 2023)',
-        description: 'La puce M2 est just efantastique, avec 32Go de RAM et 512Go de stockage.',
-        url: '',
+        description:
+          "M2, you're the apple of my eye. With 32GB RAM and 512GB storage, who could resist?",
       },
       {
         title: 'Logitech MX Master 3S',
-        description: "Juste la meilleure souris que j'ai jamais utilisée pour la productivité.",
-        url: '',
+        description: 'A mouse that might just run a company better than some CEOs out there.',
       },
       {
         title: 'Logitech MX Mechanical Mini',
-        description:
-          "Un tres bon clavier, j'aimerais un clavier custom mais pas encore les moyens.",
-        url: '',
+        description: 'Top-notch keyboard. Dreaming of custom ones. One day, wallet... one day.',
       },
       {
         title: 'LG Ergo UltraFine 32" 4k',
-        description: "Pas de pied, un seul cable pour charger le mac et l'écran, c'est parfait.",
-        url: '',
+        description: "No stand? One cable? It's like having a digital butler.",
+      },
+      {
+        title: 'Mi Computer Monitor Light Bar',
+        description: 'Nothing mind-blowing, but hey, at least I can see my desk now.',
       },
       {
         title: 'Autonomous ErgoChair Pro',
-        description: "Pas encore d'Herman Miller mais en attendant, c'est tres bien.",
-        url: '',
+        description: "Not quite the Herman Miller throne, but it's my comfy kingdom for now.",
       },
       {
         title: 'Flexispot EC4B',
-        description:
-          'Pied de bureau motorisé, avec un bon rapport qualité/prix. Un must have. avec un plateau de chez Ikea dessus',
-        url: '',
+        description: "Motorized desk legs with an IKEA top? That's some high-tech-meets-DIY vibes.",
       },
     ],
   },
@@ -41,21 +38,16 @@ export const USES = [
     items: [
       {
         title: 'VSCode',
-        description:
-          "Comme tous le monde j'utilise VSCode, j;irais faire un tour sur Jet Brains un jour.",
-        url: '',
+        description: 'Yep, jumping on the VSCode train. JetBrains? Maybe on another adventure.',
       },
       {
         title: 'Default Dark Modern',
         description:
-          "Je trouve le nouveau theme de VSCode vraiment tres bien. Des que j'ai le temps je construirais le mien.",
-        url: '',
+          "The latest VSCode theme is snazzy. Might craft my own when I'm feeling artsy.",
       },
       {
         title: 'JetBrains Mono',
-        description:
-          "C'est toujours l'enfer de trouver une police qui me plait. Mais ca fais un moment que je suis sur celle la.",
-        url: '',
+        description: 'Font-hunting is brutal. But this one? It’s been a comfy home for a while.',
       },
     ],
   },
@@ -65,18 +57,15 @@ export const USES = [
       {
         title: 'iTerm2',
         description:
-          "Comme beaucoup d'utilisateur de mac, j'utilise iTerm2. Ca m'arrive d'utiliser Hyper mais les performances sont pas top.",
-        url: '',
+          "Most Mac users’ go-to. Tried Hyper once, but it's like it had too much coffee.",
       },
       {
         title: 'Oh My ZSH',
-        description: "Collection de plugins et de themes pour ZSH, c'est vraiment tres bien.",
-        url: '',
+        description: "A little bling for my ZSH. It's the jewelry of terminals.",
       },
       {
         title: 'Fig',
-        description: 'Super cool app that adds VSCode-style autocomplete to your existing terminal',
-        url: '',
+        description: "It's like giving your terminal a hint of VSCode magic.",
       },
     ],
   },
@@ -85,37 +74,28 @@ export const USES = [
     items: [
       {
         title: '1Password',
-        description:
-          "La premiere chose que j'installe sur un nouvel appareil. J'en ai testé plein, de loin le meilleur.",
-        url: '',
+        description: 'First thing on a new device. Tested many, this one wears the crown.',
       },
       {
         title: 'Raycast',
-        description:
-          'La meilleure alternative a Alfred, avec des plugins pour tout. Je l;utilise pour tout.',
-        url: '',
+        description: 'The Alfred alternative with tools for EVERYTHING. My digital Swiss knife.',
       },
       {
         title: 'Figma',
         description:
-          "Je pensais pas qu'un soft pouvais remplacer la suite Adobe, Figma l'a fait. Ah oui Adobe a racheté Figma.",
-        url: '',
+          "Didn’t think anything could replace Adobe. Figma said 'Hold my pixels'. Oh, Adobe bought Figma? Plot twist!",
       },
       {
         title: 'Grammarly',
-        description: 'A must-have tool for non-native English speakers like me.',
-        url: 'https://grammarly.com/',
+        description: 'The trusty sidekick for a French guy playing with English.',
       },
       {
         title: 'Notion',
-        description: 'My personal OS with all the notes from all my projects.',
-        url: '',
+        description: 'Where my brain dumps and organizes itself.',
       },
       {
         title: 'Arc browser',
-        description:
-          "Enfin un rookie dans les navigateurs qui a su tirer son épingle du jeu. J'adore.",
-        url: '',
+        description: 'A rookie that actually made it in the browser big leagues. Loving it.',
       },
     ],
   },
@@ -124,39 +104,32 @@ export const USES = [
     items: [
       {
         title: 'Firebase',
-        description: 'A no-brainer database and auth solution for side projects.',
-        url: '',
+        description: 'Side project’s best friend. Fire it up!',
       },
       {
         title: 'Supabase',
-        description: 'Like Firebase, but open-source and with a Postgres database.',
-        url: '',
+        description: "Firebase's open-source cousin with a Postgres flair.",
       },
       {
         title: 'Google Domains',
-        description: 'I buy and renew all my domains here.',
-        url: '',
+        description: 'My domain shopping mall.',
       },
       {
         title: 'Vercel',
-        description: 'Here is where I host all my websites. By far the best developer experience.',
-        url: '',
+        description: 'Where my websites call home. Cozy and fast.',
       },
       {
         title: 'Netflify',
-        description: "J'utilise aussi Netlify pour certains projets, c'est tres bien aussi.",
-        url: '',
+        description: 'Also hosting some projects here. Feels like the summer home.',
       },
       {
         title: 'ProtonMail',
-        description: "J'utilise Proton pour gerer tout mes mails",
-        url: '',
+        description: 'Keeping my emails safe, away from prying eyes.',
       },
       {
         title: 'SimpleLogin',
         description:
-          "Tout comme mes mots de passes, j'ai une adresse mail par service. Juste un super produit qui fit parfaitement avec Proton.",
-        url: '',
+          'Different email for every service, because why not? Fits with Proton like a glove.',
       },
     ],
   },
@@ -165,8 +138,7 @@ export const USES = [
     items: [
       {
         title: 'Lydia',
-        description: "j'utilie qu'une banque en ligne, pour le moment lydia me convient tres bien.",
-        url: '',
+        description: 'Only online bank I need. Lydia, you get me.',
       },
     ],
   },
@@ -175,8 +147,7 @@ export const USES = [
     items: [
       {
         title: 'Audible',
-        description: 'Le choix parfait pour pouvoir faire autre chose en lisant.',
-        url: '',
+        description: 'For when my eyes need a break, but my brain doesn’t.',
       },
     ],
   },

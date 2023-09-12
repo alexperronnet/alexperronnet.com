@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 
-import { OutboundLink } from '@/components/outbound-link'
 import { PageHeading } from '@/components/page-heading'
 import { USES } from '@/data/uses'
 
@@ -13,7 +12,7 @@ export default function Uses() {
     <main className='flex grow flex-col gap-16 pb-16'>
       <PageHeading
         title='Tools. Gears. Arsenal.'
-        description='Dive into my curated collection of daily digital sidekicks. Consider this a living document, morphing with my ever-changing perspectives.'
+        description="Dive into my curated collection of daily digital sidekicks. Consider this a living document, morphing with my ever-changing perspectives. No links? I'm all about authenticity, not affiliate perks."
       />
       {USES.map((use, index) => (
         <div key={index} className='flex flex-col gap-8'>
@@ -21,8 +20,7 @@ export default function Uses() {
           <ul className='flex flex-col gap-4'>
             {use.items.map((item, index) => (
               <li key={index} className='leading-7'>
-                <OutboundLink href={item.url}>{item.title}</OutboundLink>
-                <span>&nbsp;&mdash;&nbsp;</span>
+                <span className='font-medium'>{item.title} &mdash; </span>
                 <span
                   dangerouslySetInnerHTML={{ __html: item.description }}
                   className='text-muted-foreground'

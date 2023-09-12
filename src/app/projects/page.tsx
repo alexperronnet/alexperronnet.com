@@ -35,10 +35,10 @@ const LINK_ICONS = {
 
 export default function Projects() {
   return (
-    <main className='flex grow flex-col gap-16 pb-32'>
+    <main className='flex grow flex-col gap-16 pb-16'>
       <PageHeading
-        title='Create. Share. Repeat.'
-        description='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+        title='Rookie. Resolve. Rise.'
+        description="Sure, I'm a code greenhorn, but my solutions? Straight out of a senior playbook. And yeah, with some killer kicks on the side."
       />
       <Table>
         <TableHeader>

@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 
 export default function Uses() {
   return (
-    <main className='flex grow flex-col gap-16 pb-32'>
+    <main className='flex grow flex-col gap-16 pb-16'>
       <PageHeading
-        title='Create. Share. Repeat.'
-        description='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+        title='Tools. Gears. Arsenal.'
+        description='Dive into my curated collection of daily digital sidekicks. Consider this a living document, morphing with my ever-changing perspectives.'
       />
       {USES.map((use, index) => (
         <div key={index} className='flex flex-col gap-8'>
           <h2 className='scroll-m-20 text-xl font-semibold tracking-tight'>{use.category}</h2>
           <ul className='flex flex-col gap-4'>
             {use.items.map((item, index) => (
-              <li key={index}>
+              <li key={index} className='leading-7'>
                 <OutboundLink href={item.url}>{item.title}</OutboundLink>
                 <span>&nbsp;&mdash;&nbsp;</span>
                 <span

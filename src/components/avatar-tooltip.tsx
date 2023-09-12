@@ -10,21 +10,21 @@ function avatarSrc(name: string) {
 }
 
 const AVATAR_TOOLTIP_PAIRS = [
-  { src: avatarSrc('technologist'), message: 'Ready to click the day away?' },
-  { src: avatarSrc('thumb-up'), message: 'Nice click! Got more in ya?' },
-  { src: avatarSrc('hand-peace'), message: 'Keepin’ it chill, huh?' },
-  { src: avatarSrc('blowing-a-kiss'), message: 'Oh, stop it you!' },
-  { src: avatarSrc('hands-open'), message: 'Hey, hands off the goods!' },
-  { src: avatarSrc('sad'), message: 'Why the click-spree? Missed me?' },
-  { src: avatarSrc('crying'), message: 'Water damage alert! Too many tears!' },
-  { src: avatarSrc('screaming-in-fear'), message: 'AAAH! Too. Many. Clicks!' },
-  { src: avatarSrc('angry'), message: 'You clickin’ with me!?' },
-  { src: avatarSrc('steam-from-nose'), message: 'About to blow a gasket here!' },
-  { src: avatarSrc('symbols-on-mouth'), message: '@#$%&! Censoring my rage!' },
-  { src: avatarSrc('thumb-down'), message: 'Boo! Not cool, clicker.' },
-  { src: avatarSrc('hand-check'), message: 'Fine, keep going... if you dare.' },
-  { src: avatarSrc('exploding-head'), message: 'Brain. Overload. Kaboom!' },
-  { src: avatarSrc('dizzy'), message: "You've clicked me into a spin!" },
+  { src: avatarSrc('technologist'), message: "Getting click-happy, aren't we?" },
+  { src: avatarSrc('thumb-up'), message: 'Feel the vibe? Click for more surprises.' },
+  { src: avatarSrc('hand-peace'), message: 'Chillin’ with the clicks, I see.' },
+  { src: avatarSrc('blowing-a-kiss'), message: 'Feeling the love? Smooches!' },
+  { src: avatarSrc('hands-open'), message: 'Easy tiger, I bruise like a peach!.' },
+  { src: avatarSrc('sad'), message: 'A click-storm? Did you miss me?' },
+  { src: avatarSrc('crying'), message: "Hold on! My circuits can't swim in tears!" },
+  { src: avatarSrc('screaming-in-fear'), message: 'YIKES! Click avalanche!' },
+  { src: avatarSrc('angry'), message: 'Click wars, huh!?' },
+  { src: avatarSrc('steam-from-nose'), message: 'Getting heated up! Cool the clicks.' },
+  { src: avatarSrc('symbols-on-mouth'), message: '*Beep* *Boop* Censored frustration!' },
+  { src: avatarSrc('thumb-down'), message: 'Boo! Jk, keep the clicks coming.' },
+  { src: avatarSrc('hand-check'), message: 'Alright, alright... proceed with caution.' },
+  { src: avatarSrc('exploding-head'), message: 'Mind = Blown. Too. Much. Awesomeness.' },
+  { src: avatarSrc('dizzy'), message: 'Whoa, that’s one click too many. Headspin!' },
 ]
 
 export function AvatarTooltip() {

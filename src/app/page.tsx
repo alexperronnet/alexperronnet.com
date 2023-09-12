@@ -9,10 +9,10 @@ export default function Home() {
     <main className='flex grow flex-col justify-center gap-8'>
       <h1 className='sr-only'>{SITE_CONFIG.title}</h1>
       <TokenizedText
-        format="Hi there, I'm {{name}}. {{motto}}. Transforming ordinary into extraordinary. Unleashing the magic in every click."
+        format="Hey there! I'm {{name}}. {{motto}}. Turning the mundane into magic with every click."
         replacements={{
           name: <span className='font-medium'>{SITE_CONFIG.title}</span>,
-          motto: <span className='italic'>Crafting digital symphonies</span>,
+          motto: <span className='italic'>Weaving digital dreams and dropping web beats</span>,
         }}
         className='text-lg leading-loose'
       />

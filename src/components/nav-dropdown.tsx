@@ -26,7 +26,7 @@ export function NavDropdown() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-48' align='end'>
-        <DropdownMenuLabel>Where to?</DropdownMenuLabel>
+        <DropdownMenuLabel>Where we droppin’?</DropdownMenuLabel>
         <DropdownMenuGroup>
           {NAV_CONFIG.map((navItem) => (
             <DropdownMenuItem key={navItem.label} asChild disabled={navItem.href === pathname}>

@@ -3,55 +3,36 @@ export const USES = [
     category: 'Desk',
     items: [
       {
-        title: 'MacBook Pro (14", 2021)',
-        description: 'The M1 chip is just amazing. Plus, 16 GB RAM and 1TB storage.',
-        url: 'https://amzn.to/3pVZUNz',
+        title: 'MacBook Pro (14", 2023)',
+        description: 'La puce M2 est just efantastique, avec 32Go de RAM et 512Go de stockage.',
+        url: '',
       },
       {
-        title: 'Apple Magic Trackpad',
-        description: "After years of using the laptop only, I can't go back to a mouse.",
-        url: 'https://amzn.to/3mAOcFW',
+        title: 'Logitech MX Master 3S',
+        description: "Juste la meilleure souris que j'ai jamais utilisée pour la productivité.",
+        url: '',
       },
       {
-        title: 'Dell UltraSharp 27" 4K Monitor ',
-        description: 'I love being able to charge my computer via USB-C.',
-        url: 'https://amzn.to/3jYKLqQ',
-      },
-      {
-        title: 'Living Spaces Hollis Desk',
-        description: 'Nothing fancy over here, just a table that fits my office.',
-        url: 'https://www.livingspaces.com/pdp-hollis-writing-desk-225568',
-      },
-      {
-        title: 'Herman Miller Sayl Chair',
-        description: 'I sit all day, so I might as well get a good chair.',
-        url: 'https://store.hermanmiller.com/home-office-chairs/sayl-chair/2294.html',
-      },
-    ],
-  },
-  {
-    category: 'Keyboard',
-    items: [
-      {
-        title: 'GMK Dracula',
-        description: 'The single most beautiful keycaps ever created :P',
-        url: 'https://omnitype.com/products/gmk-dracula',
-      },
-      {
-        title: 'Keychron K6',
-        description: 'My preferred wireless keyboard with a 65% compact layout.',
-        url: 'https://amzn.to/3bvnYOW',
-      },
-      {
-        title: 'Drop Ctrl',
-        description: 'This is my backup mechanical keyboard with Cherry MX Brown switches.',
-        url: 'https://drop.com/buy/drop-ctrl-mechanical-keyboard',
-      },
-      {
-        title: 'Drink Artisan Keycap',
+        title: 'Logitech MX Mechanical Mini',
         description:
-          'My favorite drink is <a href="https://en.wikipedia.org/wiki/Caipirinha">caipirinha</a>, so I replaced my ESC key with this.',
-        url: 'https://drop.com/buy/drop-ctrl-mechanical-keyboard',
+          "Un tres bon clavier, j'aimerais un clavier custom mais pas encore les moyens.",
+        url: '',
+      },
+      {
+        title: 'LG Ergo UltraFine 32" 4k',
+        description: "Pas de pied, un seul cable pour charger le mac et l'écran, c'est parfait.",
+        url: '',
+      },
+      {
+        title: 'Autonomous ErgoChair Pro',
+        description: "Pas encore d'Herman Miller mais en attendant, c'est tres bien.",
+        url: '',
+      },
+      {
+        title: 'Flexispot EC4B',
+        description:
+          'Pied de bureau motorisé, avec un bon rapport qualité/prix. Un must have. avec un plateau de chez Ikea dessus',
+        url: '',
       },
     ],
   },
@@ -60,18 +41,21 @@ export const USES = [
     items: [
       {
         title: 'VSCode',
-        description: 'After using Sublime for many years, I moved to VSCode like everybody else.',
-        url: 'https://code.visualstudio.com',
+        description:
+          "Comme tous le monde j'utilise VSCode, j;irais faire un tour sur Jet Brains un jour.",
+        url: '',
       },
       {
-        title: 'Dracula PRO',
-        description: 'This is the theme I created, maintain, and proudly use everywhere.',
-        url: 'https://draculatheme.com/pro',
+        title: 'Default Dark Modern',
+        description:
+          "Je trouve le nouveau theme de VSCode vraiment tres bien. Des que j'ai le temps je construirais le mien.",
+        url: '',
       },
       {
-        title: 'Fira Code',
-        description: 'I absolutely love this monospaced font because of all the ligatures.',
-        url: 'https://github.com/tonsky/FiraCode',
+        title: 'JetBrains Mono',
+        description:
+          "C'est toujours l'enfer de trouver une police qui me plait. Mais ca fais un moment que je suis sur celle la.",
+        url: '',
       },
     ],
   },
@@ -79,20 +63,20 @@ export const USES = [
     category: 'Terminal',
     items: [
       {
-        title: 'Hyper',
+        title: 'iTerm2',
         description:
-          "Performance could be better, but I enjoy using this since it's made with JavaScript.",
-        url: 'https://hyper.is',
+          "Comme beaucoup d'utilisateur de mac, j'utilise iTerm2. Ca m'arrive d'utiliser Hyper mais les performances sont pas top.",
+        url: '',
       },
       {
         title: 'Oh My ZSH',
-        description: "A collection of ZSH plugins that you install once and you're ready to go.",
-        url: 'https://ohmyz.sh',
+        description: "Collection de plugins et de themes pour ZSH, c'est vraiment tres bien.",
+        url: '',
       },
       {
         title: 'Fig',
         description: 'Super cool app that adds VSCode-style autocomplete to your existing terminal',
-        url: 'http://fig.io',
+        url: '',
       },
     ],
   },
@@ -101,34 +85,21 @@ export const USES = [
     items: [
       {
         title: '1Password',
-        description: 'The first thing I install on any new device.',
-        url: 'https://1password.com',
-      },
-      {
-        title: 'Alfred',
         description:
-          'My favorite Spotlight replacement with <a href="https://github.com/zenorocha/alfred-workflows" target="_blank">tons of workflows</a>.',
-        url: 'https://alfredapp.com',
+          "La premiere chose que j'installe sur un nouvel appareil. J'en ai testé plein, de loin le meilleur.",
+        url: '',
       },
       {
-        title: 'Bartender',
-        description: 'Perfect way to declutter and manage the macOS menubar.',
-        url: 'https://www.macbartender.com/Bartender4',
-      },
-      {
-        title: 'CleanShot X',
-        description: 'This is what I use whenever I need to share and/or highlight screenshots.',
-        url: 'https://cleanshot.com',
-      },
-      {
-        title: 'Divvy',
-        description: 'Tiny app that I use to create custom window positions.',
-        url: 'https://mizage.com/divvy',
+        title: 'Raycast',
+        description:
+          'La meilleure alternative a Alfred, avec des plugins pour tout. Je l;utilise pour tout.',
+        url: '',
       },
       {
         title: 'Figma',
-        description: 'I never thought something would replace the Adobe suite for me. Figma did.',
-        url: 'https://figma.com',
+        description:
+          "Je pensais pas qu'un soft pouvais remplacer la suite Adobe, Figma l'a fait. Ah oui Adobe a racheté Figma.",
+        url: '',
       },
       {
         title: 'Grammarly',
@@ -136,39 +107,15 @@ export const USES = [
         url: 'https://grammarly.com/',
       },
       {
-        title: 'iStat Menu',
-        description: 'A little system monitoring tool that sits on my menubar.',
-        url: 'https://bjango.com/mac/istatmenus/',
-      },
-      {
-        title: 'Linear',
-        description: 'A totally gorgeous issue tracker. Jira no more.',
-        url: 'https://linear.app/',
-      },
-      {
         title: 'Notion',
         description: 'My personal OS with all the notes from all my projects.',
-        url: 'https://www.notion.so/',
+        url: '',
       },
       {
-        title: 'Paw',
-        description: 'A native macOS app that facilitates triggering HTTP requests.',
-        url: 'https://paw.cloud',
-      },
-      {
-        title: 'Things',
-        description: 'My current choice for to-do lists and organizing personal tasks.',
-        url: 'https://culturedcode.com/things/',
-      },
-      {
-        title: 'TunnelBear',
-        description: 'Wonderful VPN app that I use to access content from other countries.',
-        url: 'https://www.tunnelbear.com/',
-      },
-      {
-        title: 'Superhuman',
-        description: 'I never thought I would pay to use email until I found this.',
-        url: 'https://superhuman.com/',
+        title: 'Arc browser',
+        description:
+          "Enfin un rookie dans les navigateurs qui a su tirer son épingle du jeu. J'adore.",
+        url: '',
       },
     ],
   },
@@ -176,119 +123,40 @@ export const USES = [
     category: 'Services',
     items: [
       {
-        title: 'Algolia',
-        description: 'My first choice when adding search capabilities to any project.',
-        url: 'https://www.algolia.com',
-      },
-      {
-        title: 'Cloudflare',
-        description: 'The DNS service I use with all my domains. Amazing product.',
-        url: 'https://www.cloudflare.com',
-      },
-      {
-        title: 'Collective',
-        description: 'This is what I used to create and maintain my <em>company of one</em>.',
-        url: 'https://www.collective.com',
-      },
-      {
         title: 'Firebase',
         description: 'A no-brainer database and auth solution for side projects.',
-        url: 'https://firebase.google.com',
+        url: '',
+      },
+      {
+        title: 'Supabase',
+        description: 'Like Firebase, but open-source and with a Postgres database.',
+        url: '',
       },
       {
         title: 'Google Domains',
         description: 'I buy and renew all my domains here.',
-        url: 'https://domains.google',
-      },
-      {
-        title: 'Gumroad',
-        description: 'The platform I use as a creator to sell things online.',
-        url: 'https://app.gumroad.com/signup?referrer=draculatheme',
-      },
-      {
-        title: 'Ilo',
-        description: 'An analytics tool to measure the impact of my tweets and stuff.',
-        url: 'https://ilo.so',
-      },
-      {
-        title: 'Infisical',
-        description: 'An open-source secrets manager for developers.',
-        url: 'https://infisical.com',
-      },
-      {
-        title: 'Kayak',
-        description: 'This makes it easier to find flight itineraries and share them with family.',
-        url: 'https://kayak.com',
-      },
-      {
-        title: 'Resend',
-        description: 'The new email API for developers.',
-        url: 'https://resend.com',
+        url: '',
       },
       {
         title: 'Vercel',
         description: 'Here is where I host all my websites. By far the best developer experience.',
-        url: 'https://vercel.com',
-      },
-    ],
-  },
-  {
-    category: 'Recording',
-    items: [
-      {
-        title: 'Sony Alpha 7C',
-        description: 'Awesome build quality and image. The flip-out LCD screen is super useful.',
-        url: 'https://amzn.to/2ZRB1rx',
+        url: '',
       },
       {
-        title: 'Tamron 28-75mm Lens',
-        description: 'The cheapest option I could find. No idea how these lenses work.',
-        url: 'https://amzn.to/3By5E21',
+        title: 'Netflify',
+        description: "J'utilise aussi Netlify pour certains projets, c'est tres bien aussi.",
+        url: '',
       },
       {
-        title: 'Elgato Camlink',
-        description: 'This weird thing that allows you to use DSLR cameras as webcams.',
-        url: 'https://amzn.to/3bzME8Y',
+        title: 'ProtonMail',
+        description: "J'utilise Proton pour gerer tout mes mails",
+        url: '',
       },
       {
-        title: 'Elgato Key Light',
-        description: "I keep this turned on, so people don't think I work from a dungeon.",
-        url: 'https://amzn.to/3CD0Euh',
-      },
-    ],
-  },
-  {
-    category: 'Screenshare',
-    items: [
-      {
-        title: 'Screenflow',
-        description: 'I hate editing videos. Screenflow makes it so much easier.',
-        url: 'https://www.telestream.net/screenflow/',
-      },
-      {
-        title: 'Mouseposé',
-        description: "Everybody asks me about this. It's a great way to highlight things.",
-        url: 'https://boinx.com/mousepose/',
-      },
-    ],
-  },
-  {
-    category: 'Audio',
-    items: [
-      {
-        title: 'Blue Yeti X',
-        description: 'Pretty flexible USB condenser microphone.',
-        url: 'https://amzn.to/3nJlpOU',
-      },
-      {
-        title: 'Blue Compass Boom Arm',
-        description: "If you're into cable management, you'll appreciate this thing.",
-        url: 'https://amzn.to/3nOHPOI',
-      },
-      {
-        title: 'AirPods Max (Silver)',
-        description: 'By far the best headphones I ever had. Premium quality, solid build.',
-        url: 'https://amzn.to/3gnkaSb',
+        title: 'SimpleLogin',
+        description:
+          "Tout comme mes mots de passes, j'ai une adresse mail par service. Juste un super produit qui fit parfaitement avec Proton.",
+        url: '',
       },
     ],
   },
@@ -296,21 +164,9 @@ export const USES = [
     category: 'Finance',
     items: [
       {
-        title: 'Betterment',
-        description: 'My favorite investing platform, which consistently returns ~16% earnings.',
-        url: 'http://betterment.com/invite/zenorochabuenonetto',
-      },
-      {
-        title: 'Mint',
-        description:
-          'All my accounts are connected in one place, so I can see a big picture of everything.',
-        url: 'https://mint.com',
-      },
-      {
-        title: 'Coinbase',
-        description:
-          "I'm not obsessed with crypto, but I still have some small investments there. My portfolio is made of ETH, BTC, SOL, DOGE, and SHIB.",
-        url: 'https://coinbase.com/join/rocha_12',
+        title: 'Lydia',
+        description: "j'utilie qu'une banque en ligne, pour le moment lydia me convient tres bien.",
+        url: '',
       },
     ],
   },
@@ -318,15 +174,9 @@ export const USES = [
     category: 'Reading',
     items: [
       {
-        title: 'Kindle Oasis',
-        description:
-          'I particularly like this device since it has built-in lights and physical buttons.',
-        url: 'https://amzn.to/3mAbMmm',
-      },
-      {
         title: 'Audible',
-        description: 'The perfect choice to listen to a book while running outside.',
-        url: 'https://www.audible.com/',
+        description: 'Le choix parfait pour pouvoir faire autre chose en lisant.',
+        url: '',
       },
     ],
   },

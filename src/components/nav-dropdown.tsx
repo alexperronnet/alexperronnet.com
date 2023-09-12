@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -13,6 +16,8 @@ import {
 import { NAV_CONFIG } from '@/configs/nav'
 
 export function NavDropdown() {
+  const pathname = usePathname()
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -24,7 +29,7 @@ export function NavDropdown() {
         <DropdownMenuLabel>Where to?</DropdownMenuLabel>
         <DropdownMenuGroup>
           {NAV_CONFIG.map((navItem) => (
-            <DropdownMenuItem key={navItem.label} asChild>
+            <DropdownMenuItem key={navItem.label} asChild disabled={navItem.href === pathname}>
               <Link href={navItem.href} className='cursor-pointer'>
                 <span>{navItem.label}</span>
                 <DropdownMenuShortcut>{navItem.shortcut}</DropdownMenuShortcut>

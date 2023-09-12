@@ -2,7 +2,7 @@ import { OutboundLink } from '@/components/outbound-link'
 import { TokenizedText } from '@/components/tokenized-text'
 import { Separator } from '@/components/ui/separator'
 import { SITE_CONFIG } from '@/configs/site'
-import { SOCIALS } from '@/data/socials'
+import { SOCIALS } from '@/configs/socials'
 
 export default function Home() {
   return (
@@ -14,11 +14,12 @@ export default function Home() {
           name: <span className='font-medium'>{SITE_CONFIG.title}</span>,
           motto: <span className='italic'>Crafting digital symphonies</span>,
         }}
+        className='text-lg leading-loose'
       />
       <Separator className='w-48' />
-      <div className='flex gap-6 text-sm'>
+      <div className='flex gap-6'>
         {SOCIALS.map((social) => (
-          <OutboundLink key={social.name} href={social.url}>
+          <OutboundLink key={social.name} href={social.url} className='text-sm'>
             {social.name}
           </OutboundLink>
         ))}

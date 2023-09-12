@@ -2,6 +2,8 @@ import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 
+import { SiteFooter } from '@/components/site-footer'
+import { SiteHeader } from '@/components/site-header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { SITE_CONFIG } from '@/configs/site'
 import { fontSans } from '@/libs/fonts'
@@ -23,7 +25,11 @@ export default function Layout({ children }: LayoutProps) {
       <head />
       <body className={fontSans.variable}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          {children}
+          <div className='container flex h-full max-w-3xl flex-col px-2'>
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -43,7 +43,7 @@ export function AvatarTooltip() {
 
   return (
     <Tooltip delayDuration={0}>
-      <TooltipTrigger ref={triggerRef} onClick={handleOnClick}>
+      <TooltipTrigger ref={triggerRef} onClick={handleOnClick} className='w-fit'>
         <Avatar className='h-12 w-12'>
           <AvatarImage src={AVATAR_TOOLTIP_PAIRS[currentIndex].src} alt='@alexperronnet' />
           <AvatarFallback>AP</AvatarFallback>

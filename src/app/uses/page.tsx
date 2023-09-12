@@ -11,6 +11,7 @@ export default function Uses() {
   return (
     <main className='flex grow flex-col gap-16 pb-16'>
       <PageHeading
+        variant='pinkPurple'
         title='Tools. Gears. Arsenal.'
         description="Dive into my curated collection of daily digital sidekicks. Consider this a living document, morphing with my ever-changing perspectives. No links? I'm all about authenticity, not affiliate perks."
       />

@@ -37,6 +37,7 @@ export default function Projects() {
   return (
     <main className='flex grow flex-col gap-16 pb-16'>
       <PageHeading
+        variant='blueRed'
         title='Rookie. Resolve. Rise.'
         description="Sure, I'm a code greenhorn, but my solutions? Straight out of a senior playbook. And yeah, with some killer kicks on the side."
       />

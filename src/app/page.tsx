@@ -1,3 +1,4 @@
+import { AvatarTooltip } from '@/components/avatar-tooltip'
 import { OutboundLink } from '@/components/outbound-link'
 import { TokenizedText } from '@/components/tokenized-text'
 import { Separator } from '@/components/ui/separator'
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <main className='flex grow flex-col justify-center gap-8'>
       <h1 className='sr-only'>{SITE_CONFIG.title}</h1>
+      <AvatarTooltip />
       <TokenizedText
         format="Hey there! I'm {{name}}. {{motto}}. Turning the mundane into magic with every click."
         replacements={{

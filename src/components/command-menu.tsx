@@ -34,7 +34,7 @@ export function CommandMenu() {
     () => ({
       copyLink: () => {
         if (isClient) navigator.clipboard.writeText(window.location.href)
-        toast({ title: 'Link copied!', description: 'Current URL copied to clipboard.' })
+        toast({ title: 'Voilà!', description: '🚀 URL jet-packed into your clipboard!' })
       },
       redirectToSource: () => window.open('https://github.com/alexperronnet/lxprnt.me', '_blank'),
       toggleTheme: () => setTheme(effectiveTheme === 'light' ? 'dark' : 'light'),
@@ -84,7 +84,7 @@ export function CommandMenu() {
   }, [])
 
   return (
-    <>
+    <React.Fragment>
       <Tooltip delayDuration={0}>
         <TooltipTrigger asChild>
           <Button variant='ghost' size='sm' className='w-9 p-0' onClick={() => setOpen(true)}>
@@ -92,7 +92,7 @@ export function CommandMenu() {
             <span className='sr-only'>Open command menu</span>
           </Button>
         </TooltipTrigger>
-        <TooltipContent side='left'>{isMac ? 'Press ⌘ + K' : 'Press Ctrl + K'}</TooltipContent>
+        <TooltipContent>{isMac ? 'Press ⌘ + K' : 'Press Ctrl + K'}</TooltipContent>
       </Tooltip>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder='Type a command or search...' />
@@ -134,6 +134,6 @@ export function CommandMenu() {
           </CommandGroup>
         </CommandList>
       </CommandDialog>
-    </>
+    </React.Fragment>
   )
 }

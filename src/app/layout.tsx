@@ -1,9 +1,9 @@
 import '@/styles/globals.css'
 
-import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import NextTopLoader from 'nextjs-toploader'
 
+import { Analytics } from '@/components/analytics'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { ThemeProvider } from '@/components/theme-provider'

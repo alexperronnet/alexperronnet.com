@@ -42,6 +42,7 @@
     "lucide-react": "^0.276.0",
     "next": "13.4.19",
     "next-themes": "^0.2.1",
+    "nextjs-toploader": "^1.4.2",
     "postcss": "8.4.29",
     "prettier": "^3.0.3",
     "prettier-plugin-pkg": "^0.18.0",

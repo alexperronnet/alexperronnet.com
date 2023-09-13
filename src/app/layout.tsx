@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
+import NextTopLoader from 'nextjs-toploader'
 
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang='en' suppressHydrationWarning>
       <head />
       <body className={fontSans.variable}>
+        <NextTopLoader color='#2563eb' />
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='container flex h-full max-w-3xl flex-col px-2'>
             <SiteHeader />

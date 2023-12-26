@@ -1,7 +1,7 @@
 export const SOCIALS = [
   {
     name: 'Email',
-    url: 'mailto:alex@lxprnt.me',
+    url: 'mailto:pro@apmails.com',
   },
   {
     name: 'Github',

@@ -1,7 +1,7 @@
 {
-  "name": "alexperronnet.com",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "packageManager": "pnpm@10.33.2",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -9,9 +9,24 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "typecheck": "astro check",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky"
   },
   "dependencies": {
     "astro": "^6.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@biomejs/biome": "2.4.14",
+    "@commitlint/cli": "^21.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.3",
+    "typescript": "^6.0.3",
+    "ultracite": "7.6.5"
   }
 }

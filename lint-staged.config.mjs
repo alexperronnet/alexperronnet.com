@@ -1,0 +1,5 @@
+// @ts-check
+
+export default {
+  "*.{astro,js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": ["pnpm dlx ultracite fix"],
+};

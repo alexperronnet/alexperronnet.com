@@ -1,6 +1,6 @@
 # Alexandre Perronnet
 
-Source for [www.alexperronnet.com](https://www.alexperronnet.com), a static personal website built with Astro, TypeScript, and Tailwind CSS. The site serves pre-rendered HTML, self-hosted Schibsted Grotesk, and small browser scripts for ages and local time. It has no backend, analytics, cookies, or third-party requests during page load.
+Source for [www.alexperronnet.com](https://www.alexperronnet.com), a static personal website built with Astro, TypeScript, and Tailwind CSS. The site serves pre-rendered HTML, self-hosted Schibsted Grotesk, and small browser scripts for ages and local time. Vercel Web Analytics records production page views. There is no application backend.
 
 ## Requirements
 
@@ -68,6 +68,14 @@ This is a manually maintained estimate for the tested homepage, not a live measu
 
 The custom 404 has `noindex, nofollow`. When `VERCEL_ENV=preview`, pages also receive `noindex, nofollow` and robots.txt disallows crawling. These directives control indexing; they do not restrict access.
 
+## Web Analytics
+
+The shared layout includes the official `@vercel/analytics/astro` component when `VERCEL_ENV=production`. It records page views on pages using that layout, including the 404 page. Local development, local builds, and preview deployments do not initialize analytics.
+
+Enable Web Analytics in the Vercel project dashboard, then deploy. Vercel provides the tracking script and ingestion endpoints on the site's own origin. No API key, custom event tracking, or additional server integration is required.
+
+After deployment, visit the public site and check the project's Analytics tab. Data can take a short time to appear, and content blockers may prevent collection. The analytics script adds network requests; the dated carbon assessment above reflects the version tested and should be reviewed after changes.
+
 ## Deployment
 
 The GitHub repository is connected to the Vercel project `alexperronnet.com`. Pushes to the production branch, `main`, trigger production deployments; other branches can receive preview deployments through the Git integration.
@@ -98,7 +106,7 @@ No application secrets or local `.env` file are required. Enable automatic expos
 | Variable | Usage |
 | --- | --- |
 | `VERCEL_GIT_COMMIT_SHA` | Builds the public GitHub commit link after validating the full SHA; absent locally, where the footer shows `Build local` |
-| `VERCEL_ENV` | Excludes preview deployments from indexing |
+| `VERCEL_ENV` | Excludes preview deployments from indexing and enables analytics only in production |
 
 The GitHub repository must remain public for visitors to follow the Build link.
 

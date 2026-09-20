@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/schibsted-grotesk/wght.css";
 import "#src/styles/global.css";
+import Analytics from "@vercel/analytics/astro";
 import { site } from "#src/config/site.ts";
 
 interface Props {
@@ -72,5 +73,6 @@ const structuredData = {
       </main>
       <slot name="footer" />
     </div>
+    {import.meta.env.VERCEL_ENV === "production" && <Analytics />}
   </body>
 </html>

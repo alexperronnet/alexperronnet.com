@@ -41,6 +41,14 @@ const build = getBuildInfo(
 ) : (
   <span>Build local</span>
 )}
+    <OutboundLink
+      aria-label={`Website Carbon rating ${site.carbon.rating}, assessed on ${site.carbon.testedOn}`}
+      class="quiet-link py-2"
+      href={site.carbon.href}
+      title={`Estimated carbon rating · tested ${site.carbon.testedOn}`}
+    >
+      Carbon {site.carbon.rating}
+    </OutboundLink>
   </div>
   {site.visitorClock && (
   <div class="mt-2 min-h-6">

@@ -3,6 +3,7 @@ type WebUrl = `https://${string}`;
 interface SiteConfig {
   archive: readonly { label: string; href: WebUrl }[];
   birthDates: { age: string; blueAge: string };
+  carbon: { href: WebUrl; rating: string; testedOn: string };
   description: string;
   email: `${string}@${string}`;
   introduction: readonly string[];
@@ -23,6 +24,11 @@ export const site = {
     { href: "https://v2.alexperronnet.com", label: "v2" },
   ],
   birthDates: { age: "1995-07-26", blueAge: "2021-06-21" },
+  carbon: {
+    href: "https://www.websitecarbon.com/website/alexperronnet-com/",
+    rating: "A+",
+    testedOn: "2026-09-20",
+  },
   description:
     "Software engineer and indie hacker based in France. I build web and mobile products with thoughtful design and a little help from AI.",
   email: "hello@alexperronnet.com",
@@ -58,6 +64,6 @@ export const site = {
     path: "/og.png",
     width: 1200,
   },
-  url: "https://alexperronnet.com",
+  url: "https://www.alexperronnet.com",
   visitorClock: true,
 } as const satisfies SiteConfig;

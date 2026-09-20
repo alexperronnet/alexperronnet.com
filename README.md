@@ -1,81 +1,124 @@
 # Alexandre Perronnet
 
-A minimal personal website built with Astro, TypeScript, and Tailwind CSS. Static HTML, one light theme, self-hosted Schibsted Grotesk, and no analytics or third-party client requests.
+Source for [www.alexperronnet.com](https://www.alexperronnet.com), a static personal website built with Astro, TypeScript, and Tailwind CSS. The site serves pre-rendered HTML, self-hosted Schibsted Grotesk, and small browser scripts for ages and local time. It has no backend, analytics, cookies, or third-party requests during page load.
 
-## Development
+## Requirements
 
-Use Node.js 24 and pnpm 12.5.1, pinned in `.node-version` and `package.json`.
+- Node.js 24.x, specified in `.node-version` and `package.json`.
+- pnpm 12.5.1, pinned in `package.json`.
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm prepare
 pnpm dev
 ```
 
-If your global pnpm cannot switch versions, use `npx --yes pnpm@12.5.1` instead of `pnpm`.
+Use `npx --yes pnpm@12.5.1` in place of `pnpm` if the installed package manager cannot select the pinned version. Installation runs the Husky `prepare` lifecycle script to register Git hooks.
+
+## Commands
 
 | Command | Purpose |
 | --- | --- |
 | `pnpm dev` | Start the development server |
-| `pnpm build` | Generate the static site in `dist/` |
-| `pnpm preview` | Preview the production build |
+| `pnpm build` | Generate the production site in `dist/` |
+| `pnpm preview` | Serve the existing production build locally |
 | `pnpm check` | Type-check Astro, TypeScript, tests, and JavaScript configuration |
-| `pnpm lint` | Check formatting and the default Ultracite rules |
+| `pnpm lint` | Check formatting and lint rules with Ultracite/Biome |
 | `pnpm format` | Apply safe formatting and lint fixes |
-| `pnpm test` | Run eight focused tests with Node's built-in runner |
-| `pnpm verify` | Run lint, type checks, tests, and the production build |
+| `pnpm test` | Run the native Node.js test suite |
+| `pnpm verify` | Run lint, type checks, tests, and a production build |
 
-Husky installs through the standard `prepare` command. The hooks run lint-staged before commits and commitlint for Conventional Commit messages. `pnpm-workspace.yaml` only configures dependency build permissions; this is not a monorepo.
+The pre-commit hook runs lint-staged. The commit-msg hook validates Conventional Commit messages. Run `pnpm verify` before pushing changes.
 
-## Structure
+## Project structure
 
 ```text
 src/
   components/   Outbound links, footer, current ages, and visitor clock
-  config/       Typed content and link destinations
-  layouts/      HTML document, fonts, and SEO metadata
-  lib/          Pure age, commit, and timezone helpers
-  pages/        Homepage, 404, and robots.txt
-  styles/       Tailwind theme and shared link styles
+  config/       Typed site content, links, and metadata
+  layouts/      Shared page structure and document metadata
+  lib/          Age, commit hash, and timezone helpers
+  pages/        Homepage, custom 404, and robots.txt
+  styles/       Tailwind theme and shared styles
 public/         Favicons and the static Open Graph image
-tests/          Birthday, timezone, and commit-link edge cases
+tests/          Date boundaries, timezone behavior, and commit validation
 ```
 
-Edit `src/config/site.ts` for the biography, links, metadata, birth dates, and clock toggle. The `{age}` and `{blueAge}` placeholders display completed years and refresh in the browser; the build provides a fallback without JavaScript. Résumé links open Reactive Resume, where visitors can download the PDFs. External HTTPS links use `outbound-link.astro` to open a new tab with an accessible notice.
+Astro generates static HTML; no Vercel adapter or server runtime is required. Tailwind runs through its Vite plugin. `@astrojs/sitemap` generates the sitemap during the build.
 
-The clock uses the visitor's browser timezone, not their physical location. It refreshes once per minute without geolocation, cookies, storage, or a remote API. Both custom elements clear their timers when disconnected.
+Internal imports use `#src/*`, defined in `package.json`, with explicit file extensions. Components use kebab-case filenames. A single `tsconfig.json` extends Astro's strictest preset and enables JavaScript configuration checks. Biome uses the default Ultracite core preset with experimental Astro parsing enabled. `pnpm-workspace.yaml` configures dependency build permissions; this repository contains one package.
 
-Design tokens live in `src/styles/global.css`. All components use kebab-case filenames. Internal imports always use the `#src/*` alias defined once in `package.json`; Astro, TypeScript, and the native Node test runner share that mapping. The page layout owns the common width, spacing, and main landmark, with an optional footer slot. Biome extends the default Ultracite preset without custom lint rules or overrides; the one additional option enables full Astro support, which Biome still marks experimental. A single strict Astro `tsconfig.json` also checks the tooling configurations.
+## Content and presentation
 
-The favicon files and `public/og.png` are static assets. Replace them directly when branding changes; the 1200×630 Open Graph image is not regenerated from the content configuration. There is no image-generation dependency or build script. Metadata includes canonical URLs, Open Graph/X cards, Person structured data, robots directives, and a sitemap.
+Edit `src/config/site.ts` to update the biography, birth dates, social profiles, résumé destinations, archive links, production URL, and carbon report. Design tokens and shared link styles live in `src/styles/global.css`. The page layout owns the content width, spacing, main landmark, and optional footer slot.
 
-The tests intentionally cover only date boundaries, daylight saving time, and commit validation. They need no test framework or extra dependency. There are no snapshot tests or browser-test framework to maintain.
+- `{age}` and `{blueAge}` are rendered at build time, then refreshed in the browser. With JavaScript disabled, the build-time values remain visible.
+- The visitor clock uses the browser's timezone, not geolocation. It refreshes once per minute; both custom elements clear timers when disconnected.
+- External HTTPS links use `outbound-link.astro`, which opens a new tab with `noopener noreferrer` and an accessible notice. Résumé links lead to Reactive Resume, where PDFs can be downloaded.
+- Favicons and `public/og.png` are static assets. The 1200 × 630 social image must be updated separately when its content changes.
 
-## Vercel
+### Carbon report
 
-A static Astro site needs neither a Vercel adapter nor a `vercel.ts` file. Import the repository and use these project settings:
+The footer links to the [Website Carbon report](https://www.websitecarbon.com/website/alexperronnet-com/). Its **A+** rating was assessed on **2026-09-20**. The assessment date is included in the link's accessible label and tooltip.
 
-- **Framework:** Astro; **output directory:** `dist`; **Node.js:** 24.x.
-- **Install command:** `HUSKY=0 npx --yes pnpm@12.5.1 install --frozen-lockfile`.
-- **Build command:** `npx --yes pnpm@12.5.1 verify`.
-- Enable automatic exposure of Vercel system environment variables.
-- Set the production domain to `alexperronnet.com`; keep the archive subdomains on their existing projects.
+This is a manually maintained estimate for the tested homepage, not a live measurement or certification. No badge script or API is loaded. After substantial changes to page weight or hosting, test the production URL again and update `carbon.rating`, `carbon.testedOn`, and `carbon.href` in the site configuration. Keep the date and rating above in sync with the result.
 
-The explicit commands select the pinned package manager and run all checks before deployment. Update them alongside `packageManager` when upgrading pnpm. Hosting uses Vercel's default headers and caching; this repository adds no custom hosting configuration.
+## SEO
 
-No application `.env` file or secrets are needed. Vercel provides `VERCEL_GIT_COMMIT_SHA` for the `Build <hash>` GitHub link and `VERCEL_ENV` to exclude previews from indexing. Local builds display `Build local`. The repository must be public for visitors to follow commit links. Canonical and sitemap URLs always use `site.url`; previews and the 404 page are marked `noindex`.
+`site.url` is the single source for the production origin: `https://www.alexperronnet.com`. It supplies canonical URLs, Open Graph URLs, Person structured data, robots.txt, and the sitemap. Metadata also includes a description and Open Graph/X image cards.
 
-## Occasional audits
+The custom 404 has `noindex, nofollow`. When `VERCEL_ENV=preview`, pages also receive `noindex, nofollow` and robots.txt disallows crawling. These directives control indexing; they do not restrict access.
 
-Run Lighthouse against a production preview when design or delivery changes; it is not a project dependency:
+## Deployment
+
+The GitHub repository is connected to the Vercel project `alexperronnet.com`. Pushes to the production branch, `main`, trigger production deployments; other branches can receive preview deployments through the Git integration.
+
+Use these Vercel project settings:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Astro |
+| Node.js version | 24.x |
+| Output directory | `dist` |
+| Install command | `HUSKY=0 npx --yes pnpm@12.5.1 install --frozen-lockfile` |
+| Build command | `npx --yes pnpm@12.5.1 verify` |
+| Production branch | `main` |
+
+Keep the commands aligned with `packageManager` when upgrading pnpm. Vercel manages HTTPS, static asset delivery, and caching; there is no custom hosting configuration in this repository.
+
+### Domains
+
+- `www.alexperronnet.com` serves the current production deployment.
+- `alexperronnet.com` permanently redirects to `https://www.alexperronnet.com`, preserving paths and query parameters. Configure this in Vercel's domain settings.
+- `v1.alexperronnet.com` and `v2.alexperronnet.com` remain assigned to their separate archive projects.
+
+### Environment
+
+No application secrets or local `.env` file are required. Enable automatic exposure of Vercel system environment variables:
+
+| Variable | Usage |
+| --- | --- |
+| `VERCEL_GIT_COMMIT_SHA` | Builds the public GitHub commit link after validating the full SHA; absent locally, where the footer shows `Build local` |
+| `VERCEL_ENV` | Excludes preview deployments from indexing |
+
+The GitHub repository must remain public for visitors to follow the Build link.
+
+### Release verification
+
+After pushing, wait for the matching commit's production deployment to reach `Ready`, then check:
+
+1. The Build link matches the deployed commit.
+2. The apex domain redirects to `www` and HTTPS is valid.
+3. Canonical metadata, `/robots.txt`, and `/sitemap-index.xml` use the `www` origin.
+4. `/og.png`, favicons, résumé links, and the carbon report are accessible.
+5. An unknown path returns HTTP 404 and the custom error page.
+
+## Performance audits
+
+Lighthouse is an occasional audit tool, not a project dependency. With Chrome installed, run it against production:
 
 ```sh
-pnpm build
-pnpm preview --host 127.0.0.1 --port 4322
-npx lighthouse@latest http://127.0.0.1:4322/ --chrome-flags="--headless=new" --view
-npx lighthouse@latest http://127.0.0.1:4322/ --preset=desktop --chrome-flags="--headless=new" --view
+npx lighthouse@latest https://www.alexperronnet.com/ --chrome-flags="--headless=new" --view
+npx lighthouse@latest https://www.alexperronnet.com/ --preset=desktop --chrome-flags="--headless=new" --view
 ```
 
-These commands require Chrome. Local scores are lab measurements; repeat the audit against the public URL after deployment.
-
-For an environmental estimate, assess the deployed homepage on [EcoIndex](https://www.ecoindex.fr/). Nothing appears automatically: a dated text link can be added after a real result exists. No environmental score or badge script is currently included.
+For local audits, run `pnpm build` and `pnpm preview`, then use the preview URL. Lighthouse scores are lab measurements and vary with the test environment. Keep generated reports in the ignored `artifacts/` directory.

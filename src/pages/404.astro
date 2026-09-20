@@ -1,0 +1,15 @@
+---
+import { site } from "#src/config/site.ts";
+import Page from "#src/layouts/page.astro";
+---
+
+<Page noindex title={`Page not found — ${site.name}`}>
+  <p class="mb-6 text-sm text-muted">404</p>
+  <h1 class="text-4xl tracking-tight">Nothing here, for now.</h1>
+  <p class="mt-5 leading-7 text-body">
+    This page may have moved, or never existed.
+  </p>
+  <a class="text-link mt-8 inline-block py-2 text-sm" href="/"
+    >Back to the homepage</a
+  >
+</Page>

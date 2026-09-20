@@ -1,0 +1,72 @@
+---
+import Age from "#src/components/age.astro";
+import Footer from "#src/components/footer.astro";
+import OutboundLink from "#src/components/outbound-link.astro";
+import { site } from "#src/config/site.ts";
+import Page from "#src/layouts/page.astro";
+---
+
+<Page>
+  <header
+    class="flex flex-wrap items-baseline gap-x-2 gap-y-0 text-sm leading-8"
+  >
+    <h1 class="font-normal">
+      <a aria-current="page" class="text-link" href="/">{site.name}</a>
+    </h1>
+    <nav
+      aria-label="Contact and profiles"
+      class="flex flex-wrap items-baseline gap-x-2"
+    >
+      {site.social.map(({ label, href }) => (
+  <span class="inline-flex items-baseline gap-2">
+    <span aria-hidden="true">/</span>
+    <OutboundLink class="text-link" href={href}>
+      {label}
+    </OutboundLink>
+  </span>
+))}
+      <span class="inline-flex items-baseline gap-2">
+        <span aria-hidden="true">/</span>
+        <a class="text-link" href={`mailto:${site.email}`}>Email</a>
+      </span>
+    </nav>
+  </header>
+
+  <div class="mt-10 space-y-5 text-[15px] leading-[1.8] text-body">
+    {[...site.introduction, site.personalNote].map((paragraph) => (
+  <p>
+    {paragraph.split(/(\{age\}|\{blueAge\})/g).map((part) => {
+      if (part === "{age}") {
+        return <Age birthDate={site.birthDates.age} />;
+      }
+      if (part === "{blueAge}") {
+        return <Age birthDate={site.birthDates.blueAge} />;
+      }
+      return part;
+    })}
+  </p>
+))}
+  </div>
+
+  <nav
+    aria-label="Résumés"
+    class="mt-6 flex items-baseline gap-2 text-xs leading-7 text-muted"
+  >
+    <span>Résumé</span>
+    {site.resumes.map(({ label, language, href }, index) => (
+  <>
+    {index > 0 && <span aria-hidden="true">/</span>}
+    <OutboundLink
+      aria-label={`View and download résumé in ${label}`}
+      class="quiet-link"
+      href={href}
+      hreflang={language}
+      title="View résumé and download PDF on Reactive Resume"
+    >
+      {language.toUpperCase()}
+    </OutboundLink>
+  </>
+))}
+  </nav>
+  <Footer slot="footer" />
+</Page>

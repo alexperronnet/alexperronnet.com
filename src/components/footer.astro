@@ -1,0 +1,50 @@
+---
+import OutboundLink from "#src/components/outbound-link.astro";
+import VisitorClock from "#src/components/visitor-clock.astro";
+import { site } from "#src/config/site.ts";
+import { getBuildInfo } from "#src/lib/build.ts";
+
+const build = getBuildInfo(
+  import.meta.env.VERCEL_GIT_COMMIT_SHA,
+  site.repository
+);
+---
+
+<footer class="mt-12 text-xs text-muted">
+  <div class="flex flex-wrap items-baseline gap-4">
+    <nav aria-label="Previous versions" class="flex items-baseline gap-2">
+      {site.archive.map(({ label, href }, index) => (
+  <>
+    {index > 0 && <span aria-hidden="true">/</span>}
+    <OutboundLink
+      aria-label={`Visit ${label} of this website`}
+      class="quiet-link py-2"
+      href={href}
+    >
+      {label}
+    </OutboundLink>
+  </>
+))}
+    </nav>
+    {build ? (
+  <span>
+    Build{" "}
+    <OutboundLink
+      aria-label={`View source for build ${build.shortSha}`}
+      class="quiet-link py-2 tabular-nums"
+      href={build.href}
+      title={`Built from commit ${build.sha}`}
+    >
+      {build.shortSha}
+    </OutboundLink>
+  </span>
+) : (
+  <span>Build local</span>
+)}
+  </div>
+  {site.visitorClock && (
+  <div class="mt-2 min-h-6">
+    <VisitorClock />
+  </div>
+)}
+</footer>

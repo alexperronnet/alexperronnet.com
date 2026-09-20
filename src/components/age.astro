@@ -1,0 +1,44 @@
+---
+import { getAge } from "#src/lib/age.ts";
+
+interface Props {
+  birthDate: string;
+}
+
+const { birthDate } = Astro.props;
+---
+
+<current-age data-birth-date={birthDate}>{getAge(birthDate)}</current-age>
+
+<script>
+import { getAge } from "#src/lib/age.ts";
+
+class CurrentAge extends HTMLElement {
+  private timer: ReturnType<typeof setInterval> | undefined;
+
+  connectedCallback() {
+    const { birthDate } = this.dataset;
+    if (!birthDate) {
+      return;
+    }
+
+    const update = () => {
+      const age = String(getAge(birthDate));
+      if (this.textContent !== age) {
+        this.textContent = age;
+      }
+    };
+
+    update();
+    this.timer = setInterval(update, 60_000);
+  }
+
+  disconnectedCallback() {
+    clearInterval(this.timer);
+  }
+}
+
+if (!customElements.get("current-age")) {
+  customElements.define("current-age", CurrentAge);
+}
+</script>

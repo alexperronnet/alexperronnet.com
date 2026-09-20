@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends Omit<HTMLAttributes<"a">, "href" | "target" | "rel"> {
+  href: `https://${string}`;
+}
+
+const { "aria-label": label, href, ...attributes } = Astro.props;
+const newTabNotice = "opens in a new tab";
+---
+
+<a
+  {...attributes}
+  aria-label={label ? `${label} (${newTabNotice})` : undefined}
+  href={href}
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <slot />
+  {!label && <span class="sr-only"> ({newTabNotice})</span>}
+</a>

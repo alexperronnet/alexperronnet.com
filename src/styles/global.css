@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Schibsted Grotesk Variable", sans-serif;
+  --color-paper: #ffffff;
+  --color-ink: #171717;
+  --color-body: #292929;
+  --color-muted: #707070;
+  --color-line: #a3a3a3;
+  --color-accent: #000000;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    color: var(--color-ink);
+    color-scheme: light;
+    background: var(--color-paper);
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100svh;
+  }
+
+  ::selection {
+    color: var(--color-ink);
+    background: #e5e5e5;
+  }
+
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+    transition:
+      color 160ms ease,
+      text-decoration-color 160ms ease;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 6px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+    }
+  }
+}
+
+@utility text-link {
+  color: var(--color-ink);
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-line);
+
+  &:hover {
+    color: var(--color-accent);
+    text-decoration-color: currentColor;
+  }
+}
+
+@utility quiet-link {
+  &:hover {
+    color: var(--color-ink);
+    text-decoration-line: underline;
+  }
+}

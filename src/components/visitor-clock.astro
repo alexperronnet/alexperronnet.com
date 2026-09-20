@@ -1,0 +1,49 @@
+<visitor-clock class="text-xs leading-6 text-muted tabular-nums" hidden>
+  <span title="Your browser’s timezone, not your precise location.">
+    <span class="sr-only">Your local timezone: </span><span data-zone></span
+    ><span aria-hidden="true"> · </span>
+  </span>
+  <time data-time></time>
+</visitor-clock>
+
+<script>
+import { formatVisitorTime } from "#src/lib/visitor-time.ts";
+
+class VisitorClock extends HTMLElement {
+  private timer: ReturnType<typeof setInterval> | undefined;
+
+  connectedCallback() {
+    const time = this.querySelector<HTMLTimeElement>("[data-time]");
+    const zone = this.querySelector<HTMLElement>("[data-zone]");
+    if (!(time && zone)) {
+      return;
+    }
+
+    try {
+      const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
+      const update = () => {
+        const now = new Date();
+        const formatted = formatVisitorTime(now, timeZone);
+        time.dateTime = now.toISOString();
+        time.textContent = `${formatted.date} · ${formatted.time}`;
+        zone.textContent = formatted.zone;
+      };
+
+      update();
+      this.hidden = false;
+      this.timer = setInterval(update, 60_000);
+    } catch {
+      // Keep this optional detail hidden if Intl is unavailable.
+      this.hidden = true;
+    }
+  }
+
+  disconnectedCallback() {
+    clearInterval(this.timer);
+  }
+}
+
+if (!customElements.get("visitor-clock")) {
+  customElements.define("visitor-clock", VisitorClock);
+}
+</script>
